@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apiserver-exporter2
+  namespace: prom
+  labels:
+    app: prom
+spec:
+  type: ClusterIP
+  selector:
+    app: prom2
+  ports:
+  - port: 8090
+    targetPort: 8090
+    name: web
+    protocol: TCP
